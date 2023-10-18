@@ -16,12 +16,12 @@ const options = {
 let jsonData;
 fetch('https://app.nocodb.com/api/v1/db/data/noco/pz548hvqdy1jz9r/Metayags%20test/views/Metayags%20test?offset=0&limit=25&where=url,eq,google.com', options)
   .then(response => response.json())
-  .then(response => console.log(response))
+  .then(response => console.log({response}))
   .then(response => { 
     jsonData = response;
     // Get the meta title and meta description from the JSON
-const metaTitle = jsonData.list[0]['meta-title'];
-const metaDescription = jsonData.list[0]['meta-description'];
+const metaTitle = response.list[0]['meta-title'];
+const metaDescription = response.list[0]['meta-description'];
 
 // Set the meta title and meta description of the current page
 document.title = metaTitle; // Set the title of the HTML page
