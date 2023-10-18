@@ -7,18 +7,20 @@
     <meta charset="utf-8" />
     <meta property="twitter:card" content="summary_large_image" />
     <script>
+<script>
 const options = {
   method: 'GET',
   headers: {
     'xc-auth': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpoYXBwc2luZ2hAZ21haWwuY29tIiwiZGlzcGxheV9uYW1lIjoiTXVrZXNoIFNpbmdoIiwiYXZhdGFyIjpudWxsLCJ1c2VyX25hbWUiOm51bGwsImlkIjoidXNha2tkZWZ4ZmMydDhhdCIsInJvbGVzIjoib3JnLWxldmVsLXZpZXdlciIsInRva2VuX3ZlcnNpb24iOiIyOWEwMzQyNDhlZTFlMGUyNTgyYWQ5YzI5ZjM2NDVjODJmNjBhNTJjNTRkYWYwMDUxMjkwMWE2ZjM5N2M2Y2M4MTBhMzNlNzkxZDUwY2I4MCIsInByb3ZpZGVyIjoiY29nbml0byIsImlhdCI6MTY5NzY0MzIyNywiZXhwIjoxNjk3Njc5MjI3fQ.QTaLmeGyJTeD1AdeeOVxG-cRDdMB4RXHPdqwGZOMgZQ'
   }
 };
-
+let jsonData;
 fetch('https://app.nocodb.com/api/v1/db/data/noco/pz548hvqdy1jz9r/Metayags%20test/views/Metayags%20test?offset=0&limit=25&where=url,eq,google.com', options)
   .then(response => response.json())
   .then(response => console.log(response))
-  .then(response => const jsonData = response)
+  .then(response => { jsonData = response})
   .catch(err => console.error(err)); </script>
+<script></script>
 <script>
       // Your JSON data
 
