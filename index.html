@@ -39,10 +39,15 @@ if (metaTag) {
   .catch(err => console.error(err));
   
 // Find the og:title meta tag or create it if it doesn't exist
-const ogTitleTag = document.querySelector('meta[property="og:title"]');
-if (!ogTitleTag) {
+let ogTitleTag = document.querySelector('meta[property="og:title"]');
+
+// If an existing og:title tag is found, update its content; otherwise, create a new one
+if (ogTitleTag) {
+  ogTitleTag.setAttribute('content', ogTitle);
+} else {
   ogTitleTag = document.createElement('meta');
   ogTitleTag.setAttribute('property', 'og:title');
+  ogTitleTag.setAttribute('content', ogTitle);
   document.head.appendChild(ogTitleTag);
 }
     </script>
