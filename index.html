@@ -35,7 +35,22 @@ if (metaTag) {
   document.head.appendChild(newMetaTag);
 }
                     })
-  .catch(err => console.error(err)); </script>
+  .catch(err => console.error(err));
+    
+// Get the OG title from the JSON
+const ogTitle = jsonData.list[0]['og-title'];
+
+// Find the og:title meta tag or create it if it doesn't exist
+let ogTitleTag = document.querySelector('meta[property="og:title"]');
+if (!ogTitleTag) {
+  ogTitleTag = document.createElement('meta');
+  ogTitleTag.setAttribute('property', 'og:title');
+  document.head.appendChild(ogTitleTag);
+}
+
+// Update the content of the og:title meta tag
+ogTitleTag.setAttribute('content', ogTitle);
+    </script>
 <script></script>
 <script>
       // Your JSON data
