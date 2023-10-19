@@ -38,7 +38,7 @@ if (metaTag) {
   .catch(err => console.error(err));
     
 // Get the OG title from the JSON
-const ogTitle = jsonData.list[0]['og-title'];
+const ogTitle = response.list[0]['og-title'];
 
 // Find the og:title meta tag or create it if it doesn't exist
 let ogTitleTag = document.querySelector('meta[property="og:title"]');
